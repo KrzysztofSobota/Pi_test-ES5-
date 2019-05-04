@@ -11,10 +11,10 @@ function PiTest() {
   const piValue = document.querySelector('#PiResult');  
   
 /* Choosing sample size for test */
-  let listGroup = document.querySelector('#valueList');
+  let valueSelected= document.querySelector('#valueList');
   
   function selectedValues() {
-    let listValue = listGroup.value;
+    let listValue = valueSelected.value;
     let testNumber = parseInt(listValue);
       
     return testNumber;       
