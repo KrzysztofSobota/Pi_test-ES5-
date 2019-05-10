@@ -1,3 +1,5 @@
+'use strict'
+
 window.addEventListener("DOMContentLoaded", PiTest);
 
 function PiTest() {
@@ -22,7 +24,7 @@ function PiTest() {
   
   let putNumber = selectedValues();
   
-  listGroup.addEventListener('change', selectedValues);
+  valueSelected.addEventListener('change', selectedValues);
 
   
 /*** Calculating dots position for canvas (numerical part of the test) ***/
