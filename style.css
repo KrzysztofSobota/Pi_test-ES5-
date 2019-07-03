@@ -16,13 +16,15 @@ html, body {
   background-color: hsl(45, 29%, 94%);
 }
 
-h1, h2, h3, .description > header { 
+h1, h2, h3, .description header { 
   width: 100%;
 }
 
-.description > header { font: bold 2rem 'Exo 2'; }
+.description header {
+  font: bold 2rem 'Exo 2';
+}
 
-h2, h3, .description > header {
+h2, h3, .description header {
   color: hsl(214, 61%, 30%);
 	margin: 0.75rem 0 0.5rem 0;
 }
@@ -36,7 +38,7 @@ p {
   text-align: justify;
   text-indent: 0.75rem;
   line-height: 1.5rem;
-  margin: 0.2em 0;
+  margin: 0.2rem 0;
 }
 
 .test-name {
@@ -134,7 +136,7 @@ aside {
 
 .parts-list > button {
   margin-left: 0.75rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 
 .text-underline {
