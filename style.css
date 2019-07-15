@@ -16,22 +16,31 @@ html, body {
   background-color: hsl(45, 29%, 94%);
 }
 
-h1, h2, h3, .description header { 
+h1, h2, .theory header { 
   width: 100%;
 }
 
-.description header {
+.theory header {
   font: bold 2rem 'Exo 2';
 }
 
-h2, h3, .description header {
+h2, .theory header {
   color: hsl(214, 61%, 30%);
 	margin: 0.75rem 0 0.5rem 0;
 }
 
+h2 {
+  margin: 0.75rem 0 0.25rem 0;
+  padding-left: 0.35rem;
+}
+
+.test-results h2 {
+  margin: 0.5rem 0 1rem 0;
+  padding-left: 0;
+}
+
 a {
   text-decoration: none;
-  color: black;
 }
 
 p {
@@ -43,39 +52,36 @@ p {
 
 .test-name {
   display: flex;
-  height: auto;
+  height: 6rem;
   align-content: center;  
   background-color: hsl(74, 60%, 64%);
 }
 
 .test-name > a, a > h1 {
   display: flex;
+  height: 100%;
   justify-content: center;
   align-items: center;
 }
 
 .test-name > a {
-  width: 100%;
-  height: 100%;
+  width: 100%;  
 }
 
 a > h1 {
-  height: 4rem;
   flex-flow: row nowrap;
 }
  
 .test {
-	padding-left: 1rem;
+  height: 100%;
+  margin-top: -0.5rem;
   font-size: 5rem;
   color: hsl(268, 60%, 30%);
 }
 
 .hide-show {  
   width: 100%;
-  height: 3.5rem;
-  justify-content: center;
-  align-items: center;
-  border: 4px inset hsl(21, 75%, 58%);
+  height: 3.25rem;
   background-color: hsl(214, 52%, 31%);
 }
 
@@ -97,9 +103,10 @@ article, section {
 }
 
 .description > img {
+  display: flex;
 	width: 100%;
-	max-width: 500px;
-	margin: 1rem auto;
+	max-width: 450px;
+	margin: 1rem auto 0.25rem;
 }
 
 .testarea {
@@ -108,33 +115,47 @@ article, section {
   flex-flow: column nowrap;
 }
 
-.textbox, .testspace {
+.testspace {
+  border-top: 3px solid hsl(0, 1%, 33%);
   padding: 5px 0;
+  margin: 0.25rem 0;
+}
+
+.test-results {
+	flex-flow: column nowrap;
+  padding: 0 0.25rem;
+  margin-top: 0.5rem;
+  flex: 50%;
+}
+
+.numerical, .graphical {
+  display: flex;
 }
 
 .textbox {
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 }
 
 aside {
 	display: none;
 }
 
-.parts-list {
+.options-list {
 	display: block;
   height: auto;
   margin: 1rem 0 1rem 1rem;
 }
 
-.values-list, .parts-list > button {
-  width: 7rem;
-  height: 3.5rem;
+.values-list, .options-list > button {
+  width: 6.5rem;
+  height: 3rem;
+  margin-top: 0.5rem;
   font-size: 1.75rem;
   border: 2px solid hsl(214, 52%, 31%);
   background-color: silver;
 }
 
-.parts-list > button {
+.options-list > button {
   margin-left: 0.75rem;
   border-radius: 0.5rem;
 }
@@ -144,19 +165,13 @@ aside {
   width: 100%;
   font: 600 1.125rem 'Exo 2';
 	text-decoration: underline;
-  margin: 0.25rem 0 0.5rem 0;
-}
-
-.test-results {
-	flex-flow: column nowrap;
-  padding: 0 0.25rem;
-  flex: 50%;
+  margin: 0.25rem 0;
 }
 
 ol {
 	width: 90%;
   padding-left: 1.25rem;
-  margin-top: 0;
+  margin: 0;
 }
 
 li {
@@ -164,14 +179,16 @@ li {
 }
 
 table {
-  width: 20rem;
+  width: 16rem;
+  height: 9rem;
+  margin: 0.5rem 0;
   border-collapse: collapse;
   border-spacing: 0;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
 }
 
 td {
-  height: 3.25rem;
+  height: 3rem;
   background-color: white;
   border: 1px solid black;  
 }
@@ -191,7 +208,7 @@ canvas {
   width: 300px;
   height: 300px;
   background-color: transparent;
-  border: 2px solid black;
+  border: 3px solid black;
   z-index: 10;
 }
 
@@ -199,19 +216,19 @@ canvas {
   width: 300px;
   height: 300px;
   border-radius: 100%;
-  border: thin solid hsl(70, 57%, 34%);
+  border: thin solid hsl(216, 66%, 40%);
   background-color: transparent;
   z-index: 5;
 }
 
 .pi {
-  font: 500 1.25em 'Exo 2';
+  font: 500 1.125em 'Exo 2';
 }
 
 footer {
   position: fixed;
   width: 100%;
-  height: 50px;  
+  height: 4.5rem;
   bottom: 0;
   left: 0;
   font-size: 1.25rem;
@@ -221,33 +238,40 @@ footer {
 
 footer > span {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 0.5rem;
   font-style: italic;
 }
 
-@media screen and (min-width: 420px) {
-	.hide-show > span {
-    font-size: 1.75rem;
-  }
+@media screen and (min-width: 480px) {
+  html, body {
+		font-size: 14px;
+	}
 	
+  .hide-show > span {
+    font-size: 1.65rem;
+  }
+  
 	main {
 		padding: 10px;
 	}
-}
-
-@media screen and (min-width: 640px) {	
-	aside {
-		display: flex;
-		flex-flow: row wrap;
-		flex: 1 0 250px;
-		padding: 0.25rem 0.75rem;
-		color: hsl(34, 85%, 16%);
-		background-color: silver;
-		border: 4px outset hsl(51, 100%, 35%);  
-	}
+  
+  aside {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 0 160px;
+    padding: 0.25rem 0.7rem;
+    color: hsl(34, 69%, 14%);
+    background-color: rgb(212, 221, 238);
+  }
+  
+  aside:before {
+    position: absolute;
+    content: '';
+  }
 
 	aside > header {
-		font-size: 1.3rem;
+		font-size: 1.25rem;
 		margin: 5px 0;
 	}
 
@@ -255,70 +279,131 @@ footer > span {
 		color: hsl(157, 40%, 15%);
 		text-decoration: underline;
 	}
-	
-  .textbox {
-    flex-flow: row wrap;
-  }
-	
-	.testspace {
-		margin: 0.5rem 0;
-		border-top: 3px solid hsl(0, 1%, 33%);
-	}
-	
-	.test-results {
-		flex-flow: row nowrap;
-		padding: 0 0.25rem 0 0.5rem;
-		flex: 1 0 300px;
-	}
-  
-	footer {
-		height: 60px;
-	}
-
-	footer > span {
-		padding: 10px;
-	}
 }
 
-@media screen and (min-width: 640px) and (max-width: 768px) {
-	html, body {
-		font-size: 14px;
-	}
-		
-	main {
-		padding: 10px;
-	}	
+@media screen and (min-width: 480px) and (max-width: 559px) {  
+  aside:before {
+    border-top: 2px solid hsl(9, 95%, 44%);
+    border-bottom: 2px solid hsl(9, 95%, 44%);
+    width: 80%;
+    top: 0%;
+    bottom: 0%;
+    left: 10%;
+    right: 10%;
+  }
+}
+
+@media screen and (min-width: 560px) {
+  .theory {    
+    margin-bottom: 1rem;
+  }
+
+  .description > img {
+    flex: 0 0 67%;
+    margin: 1rem 0 0.25rem;
+  }
+
+  aside {
+    flex: 1 1 195px;
+  }
+
+  aside:before {
+    border: none;
+    border-left: 2px solid hsl(9, 95%, 44%);
+    height: 90%;
+    top: 5%;
+    bottom: 5%;
+    left: 0%;
+  }
+}
+
+@media screen and (min-width: 560px) and (max-width: 639px) {
+  .numerical {
+    height: 240px;
+  }
+
+  .list, .list + div {
+    display: block;
+  }
+
+  .list {
+    max-width: 320px;
+  }
+  
+  .list + div {
+    float: left;
+  }
+
+}
+
+@media screen and (min-width: 640px) {
+  main {
+    padding: 10px 15px;
+  }
+
+  aside {
+    padding: 1rem 0.5rem 3rem 1rem;
+  }
+
+	.numerical {
+		flex: 1 0 50%;
+  }
+  
+  .graphical {
+		flex: 0 0 320px;
+  }
+  
+  .test-results {
+    flex-flow: row wrap;
+  }
 }
 
 @media screen and (min-width: 768px) {
 	html, body {
 		font-size: 16px;
 	}
-	
-  .textbox {
-		display: flex;
-		flex-flow: row nowrap;
+  
+  .description > img {
+    max-width: 500px;
   }
-	
-	aside {
-		flex: 0 0 250px;
-	}
-	
-	.content {
-		flex: 0 1 auto;
-		padding: 0 0.6rem;
-	}
-}
 
-@media screen and (min-width: 768px) and (max-width: 960px) {	
-	main {
-		padding: 15px;
+	.numerical {
+		flex: 1 0 56%;
+  }
+  
+  .graphical {
+		flex: 1 0 320px;
 	}
+  
 }
 
 @media screen and (min-width: 960px) {
 	.container {
 		width: 960px;
 		margin: 0 auto;
+  }
+
+  main {
+		padding: 15px 20px;
+  }
+  
+  .description > img {
+    max-width: 500px;
+  }
+  	
+	aside {
+		flex: 0 0 275px;
 	}
+    
+  .textbox {
+		flex-flow: row nowrap;
+  }
+
+  .numerical {
+    flex: 1 0 auto;
+  }
+
+  .graphical {
+    flex: 0 0 360px;
+  }
 }
