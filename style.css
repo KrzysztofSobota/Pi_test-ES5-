@@ -11,9 +11,7 @@ html, body {
 
 .container {
   width: 100%;
-  margin-bottom: -20px;
-  min-height: 600px;
-  background-color: hsl(45, 29%, 94%);
+  background-color: hsl(41, 32%, 90%);
 }
 
 h1, h2, .theory header { 
@@ -74,7 +72,7 @@ a > h1 {
  
 .test {
   height: 100%;
-  margin-top: -0.5rem;
+  margin-top: -0.75rem;
   font-size: 5rem;
   color: hsl(268, 60%, 30%);
 }
@@ -82,12 +80,13 @@ a > h1 {
 .hide-show {  
   width: 100%;
   height: 3.25rem;
-  background-color: hsl(214, 52%, 31%);
+  border: 0;
+  background-color: hsl(214, 52%, 28%);
 }
 
 .hide-show > span {
   font-size: 1.5rem;
-  color: hsl(74, 70%, 60%);
+  color: hsl(74, 70%, 72%);
 }
 
 main {
@@ -179,7 +178,7 @@ li {
 }
 
 table {
-  width: 16rem;
+  width: 15rem;
   height: 9rem;
   margin: 0.5rem 0;
   border-collapse: collapse;
@@ -234,6 +233,7 @@ footer {
   font-size: 1.25rem;
   color: hsl(41, 78%, 84%);
   background-color: hsl(201, 10%, 27%);
+  z-index: 15;
 }
 
 footer > span {
@@ -262,12 +262,15 @@ footer > span {
     flex: 1 0 160px;
     padding: 0.25rem 0.7rem;
     color: hsl(34, 69%, 14%);
-    background-color: rgb(212, 221, 238);
+    background-color: hsl(219, 50%, 94%);
   }
   
   aside:before {
     position: absolute;
     content: '';
+    border-width: 2px;
+    border-color: hsl(219, 65%, 60%);
+    border-style: none none none solid;
   }
 
 	aside > header {
@@ -283,13 +286,12 @@ footer > span {
 
 @media screen and (min-width: 480px) and (max-width: 559px) {  
   aside:before {
-    border-top: 2px solid hsl(9, 95%, 44%);
-    border-bottom: 2px solid hsl(9, 95%, 44%);
-    width: 80%;
+    border-style: solid none solid none;
+    width: 90%;
     top: 0%;
     bottom: 0%;
-    left: 10%;
-    right: 10%;
+    left: 5%;
+    right: 5%;
   }
 }
 
@@ -299,17 +301,10 @@ footer > span {
   }
 
   .description > img {
-    flex: 0 0 67%;
-    margin: 1rem 0 0.25rem;
-  }
-
-  aside {
-    flex: 1 1 195px;
+    flex: 0 0 65%;
   }
 
   aside:before {
-    border: none;
-    border-left: 2px solid hsl(9, 95%, 44%);
     height: 90%;
     top: 5%;
     bottom: 5%;
@@ -318,22 +313,9 @@ footer > span {
 }
 
 @media screen and (min-width: 560px) and (max-width: 639px) {
-  .numerical {
-    height: 240px;
+  .description > img {
+    margin: 1rem 0 0.25rem;
   }
-
-  .list, .list + div {
-    display: block;
-  }
-
-  .list {
-    max-width: 320px;
-  }
-  
-  .list + div {
-    float: left;
-  }
-
 }
 
 @media screen and (min-width: 640px) {
@@ -342,15 +324,16 @@ footer > span {
   }
 
   aside {
+    max-width: 275px;
     padding: 1rem 0.5rem 3rem 1rem;
   }
 
 	.numerical {
-		flex: 1 0 50%;
+		flex: 1 0 300px;
   }
   
   .graphical {
-		flex: 0 0 320px;
+		flex: 0 0 310px;
   }
   
   .test-results {
@@ -364,6 +347,7 @@ footer > span {
 	}
   
   .description > img {
+    flex: 1 0 463px;
     max-width: 500px;
   }
 
@@ -386,15 +370,7 @@ footer > span {
   main {
 		padding: 15px 20px;
   }
-  
-  .description > img {
-    max-width: 500px;
-  }
-  	
-	aside {
-		flex: 0 0 275px;
-	}
-    
+      
   .textbox {
 		flex-flow: row nowrap;
   }
