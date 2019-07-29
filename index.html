@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,9 @@
   <meta name="description" content="PI test">
   <meta name="author" content="Krzysztof Sobota">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Exo+2:200,400" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:200,400" rel="stylesheet">
 </head>
+
 <body>
   <div class="container">
     <header class="test-name">
@@ -28,31 +30,44 @@
           <div class="theory">
             <header>About the test</header>
             <h2>What is it?</h2>
-            <p>"&#120587; Test" is a simple and popular mathematical test which can be written in any programming language (like Java, Javascript, C, VisualBasic, etc.) having randomized function which generating numbers from a specified range.</p>
+            <p>"&#120587; Test" is a simple and popular mathematical test which can be written in any programming
+              language (like Java, Javascript, C, VisualBasic, etc.) having randomized function which generating numbers
+              from a specified range.</p>
             <h2>How does it work?</h2>
-            <p>The main idea is getting information about how big part of total generated points will be inside inscribed circle of the square.</p>
-            <p>No matter what is the length of the square edge ("a"), result of division inscribed circle area (S<sub>1</sub>) by square area (S<sub>2</sub>) is always the same and is equal &#120587;/4.</p>
-            <p>Because points must be evenly distributed, we can expect that during the test &#120587;/4 will be the permanent value (in theory) and because of that the calculated value multiply by 4 will give us "full" &#120587; number.</p>
-          </div>          
-          <img id="equation" src="/equation_small.svg" width="400" alt="Pi test solved equation with circle inside square picture">
+            <p>The main idea is getting information about how big part of total generated points will be inside
+              inscribed circle of the square.</p>
+            <p>No matter what is the length of the square edge ("a"), result of division inscribed circle area
+              (S<sub>1</sub>) by square area (S<sub>2</sub>) is always the same and is equal &#120587;/4.</p>
+            <p>Because points must be evenly distributed, we can expect that during the test &#120587;/4 will be the
+              permanent value (in theory) and because of that the calculated value multiply by 4 will give us "full"
+              &#120587; number.</p>
+          </div>
+          <img id="equation" src="/equation_small.svg" width="400"
+            alt="Pi test solved equation with circle inside square picture">
           <aside>
             <header><strong>Additional info</strong></header>
-            <p>This "&#120587; Test" is based on ES5 Javascript (ES6 version you can get <a href="#"><b>here</b></a>).</p>
-            <p>The main difference between versions is that here dots are displayed only once on the canvas (after all points were calculated "one by one").
-              This make method very fast - test time is more than 50x less than in ES6 version (2-3 sec. for 10000 points!).</p> 
-            <p>Instant allows using this test multiply and connect the results with chart (for example to answer a question "If sample size has an effect on &#120587; value approximation?")</p>
+            <p>This "&#120587; Test" is based on ES5 Javascript (<a href="#"><b>click for ES6 version</b></a>).
+            </p>
+            <p>The main difference between versions is that here dots are displayed only once on the canvas (after all
+              points were calculated "one by one").
+              This make method very fast - test time is more than 50x less than in ES6 version (2-3 sec. for 10000
+              points!).</p>
+            <p>Instant allows using this test multiply and connect the results with chart (for example to answer a
+              question "If sample size has an effect on &#120587; value approximation?")</p>
           </aside>
         </section>
         <section class="testarea">
           <h2>Main part of the "&#120587; Test"</h2>
-          <p>Depending on situation sometimes we need numerical or graphical presentation of the result. Below I put both of them and it is up to you which one (or both) you will take.</p>
-          <p>In the table and inside the square always appear the final test values. Square is 300x300 points (px) large and every black/red dot is a single result  from the "Pi test".</p>
+          <p>Depending on situation sometimes we need numerical or graphical presentation of the result. Below I put
+            both of them and it is up to you which one (or both) you will take.</p>
+          <p>In the table and inside the square always appear the final test values. Square is 300x300 points (px) large
+            and every black/red dot is a single result from the "Pi test".</p>
           <p>Choose from the "TEST" list number of the points and click "Start" button.</p>
           <div class="options-list">
             <label for="valueList">
-              <span class="text-underline">"&#120587; Test" option list</span>
+              <span><b>"&#120587; Test" option list</b></span>
             </label>
-            <select class="values-list" id="valueList" name="select"> 
+            <select class="values-list" id="valueList" name="select">
               <option value="TEST" selected>TEST</option>
               <option value="100">100</option>
               <option value="200">200</option>
@@ -69,8 +84,8 @@
           <div class="test-results numerical">
             <h2>Numerical test result</h2>
             <div class="list">
-              <span class="text-underline">Description of working code (table):</span>
-              <ol>
+              <span><b>Description of working code (table):</b></span>
+              <ol class="table-description">
                 <li>Red points - how many points are inside circle area (S<sub>1</sub>)</li>
                 <li>Red points [%] - red points as a percent of all tested points</li>
                 <li><span class="pi">&#120587;</span> - calculated final "Pi" value</li>
@@ -78,40 +93,41 @@
             </div>
             <div>
               <table>
-              <tr>
-                <td class="table-description">
+                <tr>
+                  <td class="table-text">
                     Red points
-                </td>
-                <td class="value" id="number1"></td>
-              </tr>
-              <tr>
-                <td class="table-description">
-                    Red points [%]
-                </td>
-                <td class="value" id="number2"></td>
-              </tr>
-              <tr>
-                <td class="table-description">
-                    <span class="pi">&#120587; &#8776;</span>
-                </td>
-                <td class="value" id="PiResult"></td>
+                  </td>
+                  <td class="value" id="number1"></td>
                 </tr>
-            </table>
+                <tr>
+                  <td class="table-text">
+                    Red points [%]
+                  </td>
+                  <td class="value" id="number2"></td>
+                </tr>
+                <tr>
+                  <td class="table-text">
+                    <span class="pi">&#120587; &#8776;</span>
+                  </td>
+                  <td class="value" id="PiResult"></td>
+                </tr>
+              </table>
             </div>
           </div>
           <div class="test-results graphical">
             <h2>Graphical test result</h2>
             <div class="circle">
-              <canvas id="myCanvas" width="300" height="300"></canvas>            
+              <canvas id="myCanvas" width="300" height="300"></canvas>
             </div>
           </div>
         </section>
       </article>
     </main>
     <footer>
-			<span>Krzysztof Sobota 2019</span>
+      <span>Krzysztof Sobota 2019</span>
     </footer>
   </div>
-<script type="text/javascript" src="/index.js"></script>
+  <script type="text/javascript" src="/index.js"></script>
 </body>
+
 </html>

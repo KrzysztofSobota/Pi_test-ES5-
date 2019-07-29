@@ -23,7 +23,7 @@ h1, h2, .theory header {
 }
 
 h2, .theory header {
-  color: hsl(214, 61%, 30%);
+  color: hsl(226, 65%, 35%);
 	margin: 0.75rem 0 0.5rem 0;
 }
 
@@ -42,7 +42,6 @@ a {
 }
 
 p {
-  text-align: justify;
   text-indent: 0.75rem;
   line-height: 1.5rem;
   margin: 0.2rem 0;
@@ -89,6 +88,11 @@ a > h1 {
   color: hsl(74, 70%, 72%);
 }
 
+.hide-show > span:hover {
+  cursor: pointer;
+  color: hsl(220, 48%, 94%);
+}
+
 main {
   display: flex;
   flex-flow: row wrap;
@@ -123,7 +127,6 @@ article, section {
 .test-results {
 	flex-flow: column nowrap;
   padding: 0 0.25rem;
-  margin-top: 0.5rem;
   flex: 50%;
 }
 
@@ -147,11 +150,11 @@ aside {
 
 .values-list, .options-list > button {
   width: 6.5rem;
-  height: 3rem;
+  height: 2.75rem;
   margin-top: 0.5rem;
   font-size: 1.75rem;
   border: 2px solid hsl(214, 52%, 31%);
-  background-color: silver;
+  background-color: rgb(204, 203, 203);
 }
 
 .options-list > button {
@@ -159,21 +162,20 @@ aside {
   border-radius: 0.5rem;
 }
 
-.text-underline {
+.options-list span, .list > span {
   display: inline-block;
   width: 100%;
   font: 600 1.125rem 'Exo 2';
-	text-decoration: underline;
   margin: 0.25rem 0;
 }
 
-ol {
-	width: 90%;
+.table-description {
+	min-width: 90%;
   padding-left: 1.25rem;
   margin: 0;
 }
 
-li {
+.table-description > li {
   margin: 0.25rem 0;
 }
 
@@ -197,7 +199,7 @@ td {
   padding-left: 0.75rem;
 }
 
-.table-description {
+.table-text {
   width: auto;
   padding: 0 0.5rem;
   text-align: right;
@@ -231,7 +233,7 @@ footer {
   bottom: 0;
   left: 0;
   font-size: 1.25rem;
-  color: hsl(41, 78%, 84%);
+  color: hsl(54, 100%, 90%);
   background-color: hsl(201, 10%, 27%);
   z-index: 15;
 }
@@ -261,8 +263,7 @@ footer > span {
     flex-flow: row wrap;
     flex: 1 0 160px;
     padding: 0.25rem 0.7rem;
-    color: hsl(34, 69%, 14%);
-    background-color: hsl(219, 50%, 94%);
+    color: hsl(226, 65%, 35%);
   }
   
   aside:before {
@@ -279,7 +280,7 @@ footer > span {
 	}
 
 	aside a {
-		color: hsl(157, 40%, 15%);
+		color: hsl(120, 60%, 19%);
 		text-decoration: underline;
 	}
 }
@@ -305,16 +306,25 @@ footer > span {
   }
 
   aside:before {
-    height: 90%;
     top: 5%;
     bottom: 5%;
     left: 0%;
   }
 }
 
+/** List and table are in one line **/
 @media screen and (min-width: 560px) and (max-width: 639px) {
   .description > img {
     margin: 1rem 0 0.25rem;
+  }
+
+  .list + div {
+    padding-top: 1rem;
+    margin: 0;
+  }
+
+  .table-description {
+    padding-bottom: 1.25rem;
   }
 }
 
@@ -357,8 +367,7 @@ footer > span {
   
   .graphical {
 		flex: 1 0 320px;
-	}
-  
+	}  
 }
 
 @media screen and (min-width: 960px) {
@@ -373,13 +382,5 @@ footer > span {
       
   .textbox {
 		flex-flow: row nowrap;
-  }
-
-  .numerical {
-    flex: 1 0 auto;
-  }
-
-  .graphical {
-    flex: 0 0 360px;
   }
 }
